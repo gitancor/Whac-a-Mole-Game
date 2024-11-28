@@ -1,0 +1,122 @@
+/* General body styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: #ffffff;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h1 {
+    color: white;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+h2 {
+    color: rgb(194, 3, 252);
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+/* Game board */
+#board {
+    width: 90%;
+    max-width: 540px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: url("./soil.png");
+    background-size: cover;
+    border: 3px solid rgb(208, 0, 255);
+    border-radius: 25px;
+    position: relative;
+    aspect-ratio: 1; /* Ensures a square layout */
+}
+
+#board div {
+    width: 33.33%;
+    height: 33.33%;
+    background-image: url("./pipe.png");
+    background-size: cover;
+    position: relative;
+    border: none; /* Remove border between tiles */
+    box-sizing: border-box; /* Ensure correct box sizing */
+    transition: transform 0.1s ease, border-color 0.2s ease;
+}
+
+/* Feedback for clicked tiles */
+.clicked {
+    border-color: yellow; /* Highlight effect */
+    transform: scale(0.95); /* Subtle shrinking effect on click */
+}
+
+/* Mole and plant images */
+#board div img {
+    width: 50%; /* Adjusted size for responsiveness */
+    height: 50%;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Reload button */
+#reloadButton {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #b700ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#reloadButton:hover {
+    background-color: #8a00cc;
+}
+
+/* Optional: Highlight on hover for better interactivity */
+#board div:hover {
+    border-color: rgba(255, 255, 0, 0.8); /* Light yellow border on hover */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    #reloadButton {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #reloadButton {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
